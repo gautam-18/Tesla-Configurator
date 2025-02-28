@@ -11,34 +11,7 @@ import { CarModel, Color, Config, CarOptions } from './models.type';
   standalone: true,
   imports: [RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: 'app.component.html',
-  // styles: [
-  //   `
-  //     .navBar {
-  //       background: #111111;
-  //       padding: 1rem;
-  //       color: white;
-  //       width: 70%;
-  //     }
-  //     .wrapper {
-  //       display: flex;
-  //       justify-content: center;
-  //       align-items: center;
-  //       height: 12rem;
-  //     }
 
-  //     nav button {
-  //       text-decoration: none;
-  //       color: #333;
-  //       border-radius: 4px;
-  //       background: #f0f0f0;
-  //     }
-
-  //     nav a.active {
-  //       background: #3366cc;
-  //       color: white;
-  //     }
-  //   `,
-  // ],
   styles: [
     `
       .containerOne {

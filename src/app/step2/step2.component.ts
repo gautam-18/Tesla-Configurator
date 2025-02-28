@@ -23,7 +23,6 @@ export class Step2Component implements OnInit {
     private configuratorService: ConfiguratorService
   ) {}
 
-  // Computed properties for display
   get modelCode(): string {
     return this.configuratorService.currentCar()?.code || '';
   }
@@ -39,17 +38,14 @@ export class Step2Component implements OnInit {
   get totalPrice(): number {
     let total = 0;
 
-    // Add base price from config
     if (this.selectedConfig) {
       total += this.selectedConfig.price;
     }
 
-    // Add color price
     if (this.configuratorService.currentColor()) {
       total += this.configuratorService.currentColor()!.price;
     }
 
-    // Add options
     if (this.yokeSelected) {
       total += 1000;
     }
@@ -92,7 +88,6 @@ export class Step2Component implements OnInit {
       });
     }
   }
-  // Add this method to handle dropdown selection
   onConfigSelect(event: Event): void {
     const selectElement = event.target as HTMLSelectElement;
     const configId = Number(selectElement.value);
@@ -131,7 +126,6 @@ export class Step2Component implements OnInit {
     this.configuratorService.towHitchSelected.set(this.towHitchSelected);
   }
 
-  // Helper methods for UI
   isConfigSelected(config: Config): boolean {
     return this.selectedConfig?.id === config.id;
   }

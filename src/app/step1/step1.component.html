@@ -8,13 +8,6 @@
       <option [value]="carModel.code">{{ carModel.description }}</option>
       }
     </select>
-    <!-- <button
-      class="btn"
-      [disabled]="!selected || !selectedCarColor"
-      (click)="goToStep2()"
-    >
-      STEP2
-    </button> -->
 
     @if(selected){ Color:
     <select (change)="onSelectColor($event)">

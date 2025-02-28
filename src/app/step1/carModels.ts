@@ -1,31 +1,3 @@
-// export const carModels = [
-//   {
-//     code: '3',
-//     description: 'A Car',
-//     color: ['black', 'blue', 'grey', 'red', 'white'],
-//   },
-//   {
-//     code: 'C',
-//     description: 'A Car',
-//     color: ['black', 'grey', 'white'],
-//   },
-//   {
-//     code: 'S',
-//     description: 'A Car',
-//     color: ['black', 'blue', 'grey', 'red', 'white'],
-//   },
-//   {
-//     code: 'X',
-//     description: 'A Car',
-//     color: ['black', 'blue', 'grey', 'red', 'white'],
-//   },
-//   {
-//     code: 'Y',
-//     description: 'A Car',
-//     color: ['black', 'blue', 'grey', 'red', 'white'],
-//   },
-// ];
-
 export const carModels = [
   {
     code: 'S',

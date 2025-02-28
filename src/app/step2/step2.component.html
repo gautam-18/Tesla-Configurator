@@ -1,13 +1,6 @@
 <div class="step2-container">
   <h4>Step 2: Select your config and options</h4>
-  <!-- Summary of car and color selected -->
-  <!-- <div class="selected-summary">
-    <p>Selected Model: {{ modelDescription }} in {{ colorDescription }}</p>
-    <img [src]="carImageUrl" alt="Car Image" class="car-image" />
-  </div> -->
 
-  <!-- Configuration selection -->
-  <!-- Configuration selection -->
   @if (carOptions) {
 
   <div class="choice">
@@ -27,9 +20,7 @@
   <p>Range:{{ range }}-Max-Speed:{{ topSpeed }}-price{{ baseModelPrice }}</p>
   }
 
-  <!-- Additional options -->
   <div class="options-section">
-    <!-- Yoke steering wheel option -->
     @if (carOptions.yoke) {
     <div class="option-item">
       <label>
@@ -41,10 +32,7 @@
         />
       </label>
     </div>
-    }
-
-    <!-- Tow hitch option -->
-    @if (carOptions.towHitch) {
+    } @if (carOptions.towHitch) {
     <div class="option-item">
       <label>
         Tow Hitch Package ({{ formatPrice(1000) }})
@@ -59,6 +47,5 @@
     <button (click)="goToStep3()">STEP 3</button>
   </div>
   }
-  <!-- Price summary -->
 </div>
 <img [src]="carImageUrl" alt="Car Image" class="center" />
