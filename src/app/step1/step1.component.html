@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <div class="step1Container">
+    <h4>Step 1: Choose your Model and color</h4>
+    Model:
+    <select (change)="onSelectModel($event)">
+      <option value="0">Choose...</option>
+      @for (carModel of carModels; track carModel.code) {
+      <option [value]="carModel.code">{{ carModel.description }}</option>
+      }
+    </select>
+    <!-- <button
+      class="btn"
+      [disabled]="!selected || !selectedCarColor"
+      (click)="goToStep2()"
+    >
+      STEP2
+    </button> -->
+
+    @if(selected){ Color:
+    <select (change)="onSelectColor($event)">
+      <option value="">Choose Color...</option>
+      @for (color of availableColors; track color.code) {
+      <option [value]="color.code">{{ color.description }}</option>
+      }
+    </select>
+    }
+  </div>
+</div>
+@if(selectedCarColor){
+<div>
+  <img [src]="imageUrl" alt="Car Image" width="full" class="center" />
+</div>
+}

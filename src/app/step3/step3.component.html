@@ -1,0 +1,42 @@
+<!-- so now in this step we have to display the summary -->
+<!-- <h1>Step3:Summary</h1>
+<h3>Your Tesla {{ modelDescription }}</h3>
+<h3>{{ seelctedConfig }}</h3>
+<h3>{{ colorDescription }}</h3>
+<h3>{{ additionalInfo }}</h3>
+
+<img [src]="carImageUrl" alt="" /> -->
+
+<div class="wrapper">
+  <div class="container">
+    <h1>Your Tesla {{ modelDescription }}</h1>
+    <div class="content">
+      <div class="features">
+        <h4>{{ seelctedConfig }}</h4>
+        <h4>{{ baseModelPrice }}</h4>
+      </div>
+      <p class="additional">Range:{{ range }}-Max speed:{{ topSpeed }}</p>
+      <div class="features">
+        <p>{{ colorDescription }}</p>
+        <p>{{ ColorPrice }}</p>
+      </div>
+
+      @if(towHitch){
+      <div class="features">
+        <p>Tow Hitch Package</p>
+        <p>$1000</p>
+      </div>
+      } @if(yoke){
+      <div class="features">
+        <p>Yoke Steering Wheel</p>
+        <p>$1000</p>
+      </div>
+      }
+      <div class="TotalCost">
+        <p>TOTAL COST</p>
+        <p>{{ totalPrice }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<img [src]="carImageUrl" alt="" />

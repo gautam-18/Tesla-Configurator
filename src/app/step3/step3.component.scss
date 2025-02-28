@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12rem;
+}
+.container {
+  background: #111111;
+  padding: 1rem;
+  color: white;
+  width: 70%;
+  height: auto;
+}
+.features {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  h4,
+  p {
+    font-size: small;
+  }
+}
+.TotalCost {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+h1 {
+  margin-bottom: 2rem;
+  font-size: large;
+}
+.additional {
+  font-size: 0.6rem;
+  color: whitesmoke;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}

@@ -1,0 +1,28 @@
+<div class="containerOne">
+  <header>
+    <div class="wrapper">
+      <div class="navBar">
+        <nav>
+          <button [routerLink]="'/step1'" routerLinkActive="active" class="btn">
+            Step 1
+          </button>
+          <button
+            [routerLink]="'/step2'"
+            routerLinkActive="active"
+            class="btn"
+            (click)="goToStep2()"
+          >
+            Step 2
+          </button>
+          <button [routerLink]="'/step3'" routerLinkActive="active" class="btn">
+            Step 3
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>
