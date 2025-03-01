@@ -139,7 +139,7 @@ export class Step2Component implements OnInit {
   }
   goToStep3() {
     if (!this.selectedConfig) {
-      alert('Please select a car model and color before proceeding.');
+      alert('Please select car configurations before proceeding.');
       return;
     }
 
