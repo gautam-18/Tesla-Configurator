@@ -2,9 +2,6 @@ import { Component } from '@angular/core';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { ConfiguratorService } from './configurator.service';
 import { computed } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { NgModule } from '@angular/core';
-import { CarModel, Color, Config, CarOptions } from './models.type';
 
 @Component({
   selector: 'app-root',
@@ -87,22 +84,10 @@ export class AppComponent {
     () => this.configService.currentColor()?.code !== undefined
   );
 
-  // constructor(private configuratorService: ConfiguratorService) {}
   configuratorService = new ConfiguratorService();
   selectedCar = this.configuratorService.getSelectedCar();
   exists = this.configuratorService.getIfExists();
   goToStep2() {
-    console.log(this.exists);
-    console.log('IINN', this.selectedCar);
-    // if (!this.selectedCar || !this.selectedCar.color) {
-    //   alert('Please select a car model and color before proceeding.');
-    //   return;
-    // }
-    // if (!this.exists) {
-    //   alert('Please select a car model and color before proceeding.');
-    //   return;
-    // }
-    console.log(this.selectedCar.model);
     if (this.selectedCar.model) {
       this.configuratorService.setSelectedCar(
         this.selectedCar.model,
@@ -110,8 +95,5 @@ export class AppComponent {
       );
     }
     console.log('Car saved:', this.selectedCar, this.selectedCar.color);
-
-    //   this.router.navigate(['/step2']);
-    // }
   }
 }

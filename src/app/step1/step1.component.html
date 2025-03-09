@@ -4,7 +4,7 @@
     Model:
     <select (change)="onSelectModel($event)">
       <option value="0">Choose...</option>
-      @for (carModel of carModels; track carModel.code) {
+      @for (carModel of carModels(); track carModel.code) {
       <option [value]="carModel.code">{{ carModel.description }}</option>
       }
     </select>

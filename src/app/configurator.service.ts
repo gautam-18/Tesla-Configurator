@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { CarModel, Color, Config, CarOptions } from './models.type';
 import { Observable } from 'rxjs';
-
+import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
@@ -34,10 +34,10 @@ export class ConfiguratorService {
   }
 
   // Current selections as signals
-  readonly currentCar = signal<CarModel | undefined>(undefined);
+  currentCar = signal<CarModel | undefined>(undefined);
   readonly currentColor = signal<Color | undefined>(undefined);
   readonly currentConfig = signal<Config | undefined>(undefined);
-  readonly yokeSelected = signal<boolean>(false);
+  yokeSelected = signal<boolean>(false);
   readonly towHitchSelected = signal<boolean>(false);
 
   // ✅ **NEW: Store Selected Car and Color from Step 1**
@@ -60,7 +60,7 @@ export class ConfiguratorService {
     }
     return false;
   }
-  // ✅ **NEW: Retrieve Selected Car and Color in Step 2**
+  // // ✅ **NEW: Retrieve Selected Car and Color in Step 2**
   getSelectedCar(): { model?: CarModel; color?: Color } {
     return {
       model: this.currentCar(),
@@ -79,36 +79,36 @@ export class ConfiguratorService {
   }
 
   // Helper method to set car model (resets other selections)
-  setCurrentCar(car: CarModel): void {
-    this.currentCar.set(car);
-    this.currentConfig.set(undefined);
-    this.yokeSelected.set(false);
-    this.towHitchSelected.set(false);
-  }
+  // setCurrentCar(car: CarModel): void {
+  //   this.currentCar.set(car);
+  //   this.currentConfig.set(undefined);
+  //   this.yokeSelected.set(false);
+  //   this.towHitchSelected.set(false);
+  // }
 
   // Helper to calculate total price
-  calculateTotalPrice(): number {
-    let total = 0;
+  // calculateTotalPrice(): number {
+  //   let total = 0;
 
-    // Add base price from config
-    if (this.currentConfig()) {
-      total += this.currentConfig()!.price;
-    }
+  //   // Add base price from config
+  //   if (this.currentConfig()) {
+  //     total += this.currentConfig()!.price;
+  //   }
 
-    // Add color price
-    if (this.currentColor()) {
-      total += this.currentColor()!.price;
-    }
+  //   // Add color price
+  //   if (this.currentColor()) {
+  //     total += this.currentColor()!.price;
+  //   }
 
-    // Add options
-    if (this.yokeSelected()) {
-      total += 1000;
-    }
+  //   // Add options
+  //   if (this.yokeSelected()) {
+  //     total += 1000;
+  //   }
 
-    if (this.towHitchSelected()) {
-      total += 1000;
-    }
+  //   if (this.towHitchSelected()) {
+  //     total += 1000;
+  //   }
 
-    return total;
-  }
+  //   return total;
+  // }
 }

@@ -1,9 +1,7 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConfiguratorService } from '../configurator.service';
-import { Config, CarOptions } from '../models.type';
 import { FormsModule } from '@angular/forms';
-import { retry } from 'rxjs';
 
 @Component({
   selector: 'app-step3',
@@ -59,7 +57,7 @@ export class Step3Component {
     return this.configuratorService.currentConfig()?.range ?? 0;
   }
   get topSpeed(): number {
-    return this.configuratorService.currentConfig()?.range ?? 0;
+    return this.configuratorService.currentConfig()?.speed ?? 0;
   }
   get baseModelPrice(): number {
     return this.configuratorService.currentConfig()?.price ?? 0;

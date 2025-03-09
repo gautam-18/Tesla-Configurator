@@ -9,14 +9,14 @@
     <select class="config-dropdown" (change)="onConfigSelect($event)">
       <option value="" disabled selected>Choose a configuration...</option>
       @for (config of carOptions.configs; track config.id) {
-      <option [value]="config.id" [selected]="selectedConfig?.id === config.id">
+      <option [value]="config.id">
         {{ config.description }} ({{ formatPrice(config.price) }})
       </option>
       }
     </select>
   </div>
 
-  @if(selectedConfig){
+  @if(carServices.currentConfig()){
   <p>Range:{{ range }}-Max-Speed:{{ topSpeed }}-price{{ baseModelPrice }}</p>
   }
 
@@ -27,7 +27,7 @@
         Yoke Steering Wheel ({{ formatPrice(1000) }})
         <input
           type="checkbox"
-          [checked]="yokeSelected"
+          [checked]="carServices.yokeSelected()"
           (change)="toggleYoke()"
         />
       </label>
@@ -38,7 +38,7 @@
         Tow Hitch Package ({{ formatPrice(1000) }})
         <input
           type="checkbox"
-          [checked]="towHitchSelected"
+          [checked]="carServices.towHitchSelected()"
           (change)="toggleTowHitch()"
         />
       </label>
